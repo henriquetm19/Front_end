@@ -1,0 +1,5 @@
+function setMask(el, fn){el.addEventListener('input', e=>{e.target.value=fn(e.target.value);});}
+function cpfMask(v){return v.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2').slice(0,14);}
+function phoneMask(v){v=v.replace(/\D/g,'');if(v.length<=10){return v.replace(/(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3').trim().replace(/-$/,'');}return v.replace(/(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3').slice(0,15);}
+function cepMask(v){return v.replace(/\D/g,'').replace(/(\d{5})(\d)/,'$1-$2').slice(0,9);}
+window.addEventListener('DOMContentLoaded',()=>{const cpf=document.getElementById('cpf'),tel=document.getElementById('telefone'),cep=document.getElementById('cep');if(cpf)setMask(cpf,cpfMask);if(tel)setMask(tel,phoneMask);if(cep)setMask(cep,cepMask);});
