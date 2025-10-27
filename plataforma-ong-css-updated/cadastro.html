@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cadastro — ONG Exemplo</title>
+  <meta name="description" content="Formulário de cadastro para voluntários e doadores.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-section" aria-labelledby="form-title">
+      <div class="container">
+        <h1 id="form-title">Cadastro</h1>
+        <p>Preencha seus dados — campos com * são obrigatórios.</p>
+
+        <form id="cadastroForm" action="#" method="post" novalidate class="form-styled">
+          <fieldset>
+            <legend>Dados pessoais</legend>
+            <label for="nome">Nome Completo *</label>
+            <input id="nome" name="nome" type="text" required minlength="3" aria-required="true">
+            <label for="email">E-mail *</label>
+            <input id="email" name="email" type="email" required aria-required="true">
+            <label for="cpf">CPF *</label>
+            <input id="cpf" name="cpf" type="text" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required>
+            <label for="telefone">Telefone *</label>
+            <input id="telefone" name="telefone" type="tel" inputmode="tel" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(00) 90000-0000" required>
+            <label for="nascimento">Data de Nascimento *</label>
+            <input id="nascimento" name="nascimento" type="date" required>
+          </fieldset>
+
+          <fieldset>
+            <legend>Endereço</legend>
+            <label for="endereco">Endereço *</label>
+            <input id="endereco" name="endereco" type="text" required>
+            <label for="cep">CEP *</label>
+            <input id="cep" name="cep" type="text" inputmode="numeric" pattern="\d{5}-\d{3}" placeholder="00000-000" required>
+            <label for="cidade">Cidade *</label>
+            <input id="cidade" name="cidade" type="text" required>
+            <label for="estado">Estado *</label>
+            <select id="estado" name="estado" required>
+              <option value="">Selecione</option>
+              <option value="SP">SP</option>
+              <option value="RJ">RJ</option>
+              <option value="RS">RS</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Interesses</legend>
+            <label><input type="checkbox" name="interesse" value="voluntariado"> Voluntariado</label>
+            <label><input type="checkbox" name="interesse" value="doacao"> Doação</label>
+            <label><input type="checkbox" name="interesse" value="divulgacao"> Divulgação</label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enviar cadastro</button>
+            <button type="reset" class="btn btn-ghost">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>© ONG Exemplo</p>
+    </div>
+  </footer>
+
+  <script src="js/masks.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

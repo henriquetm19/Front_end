@@ -1,0 +1,75 @@
+/* Layout and Grid - uses CSS Grid for main layout and 12 columns system */
+
+/* Breakpoints (mínimo 5) */
+:root{
+  --bp-xs: 360px;
+  --bp-sm: 576px;
+  --bp-md: 720px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+  --bp-xxl: 1400px;
+}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid var(--color-neutral-300);position:sticky;top:0;z-index:50}
+.site-header .container{display:flex;align-items:center;gap:12px;height:72px}
+.logo img{height:48px}
+
+/* Hamburger */
+.hamburger{display:none;background:transparent;border:0;padding:.5rem;cursor:pointer}
+.hamburger-box{display:inline-block;width:24px;height:18px;position:relative}
+.hamburger-inner, .hamburger-inner:before, .hamburger-inner:after{display:block;background:var(--color-neutral-700);height:2px;border-radius:2px;position:absolute;left:0;right:0}
+.hamburger-inner{top:50%;transform:translateY(-50%)}
+.hamburger-inner:before{content:'';top:-7px}
+.hamburger-inner:after{content:'';top:7px}
+
+/* Nav */
+.main-nav{display:block}
+.nav-list{list-style:none;display:flex;gap:12px;margin:0;padding:0;align-items:center}
+.nav-list li{position:relative}
+.nav-list a, .submenu-toggle{color:var(--color-neutral-900);text-decoration:none;background:transparent;border:0;font-weight:600;padding:8px;border-radius:6px}
+.nav-list a:hover, .submenu-toggle:hover{background:rgba(0,0,0,0.03)}
+.submenu{position:absolute;left:0;top:100%;background:#fff;border:1px solid var(--color-neutral-300);padding:8px;border-radius:8px;display:none;min-width:180px;box-shadow:0 10px 30px rgba(16,24,40,0.08)}
+.has-submenu:focus-within .submenu, .has-submenu .submenu-open{display:block}
+
+/* Grid system: container uses max width; grid classes below implement 12 columns */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gutter)}
+.col-1{grid-column:span 1}
+.col-2{grid-column:span 2}
+.col-3{grid-column:span 3}
+.col-4{grid-column:span 4}
+.col-5{grid-column:span 5}
+.col-6{grid-column:span 6}
+.col-7{grid-column:span 7}
+.col-8{grid-column:span 8}
+.col-9{grid-column:span 9}
+.col-10{grid-column:span 10}
+.col-11{grid-column:span 11}
+.col-12{grid-column:span 12}
+
+/* Gaps utilities */
+.gap-8{gap:8px}
+.gap-16{gap:16px}
+.gap-24{gap:24px}
+
+/* Responsive behavior */
+@media (max-width:1200px){
+  .grid{grid-template-columns:repeat(12,1fr)}
+}
+@media (max-width:992px){
+  .grid{grid-template-columns:repeat(8,1fr)}
+}
+@media (max-width:720px){
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .col-8{grid-column:span 4}
+  .col-4{grid-column:span 4}
+  .col-12{grid-column:span 4}
+  .nav-list{display:none}
+  .hamburger{display:inline-block}
+}
+@media (max-width:576px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Footer small */
+footer{padding:var(--space-3) 0;background:transparent}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projetos — ONG Exemplo</title>
+  <meta name="description" content="Conheça nossos projetos, oportunidades de voluntariado e formas de doar.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-list" aria-labelledby="projects-title">
+      <div class="container">
+        <h1 id="projects-title">Projetos Sociais</h1>
+        <p>Conheça as iniciativas atuais e como você pode ajudar.</p>
+
+        <div class="grid grid-12 gap-24">
+          <article class="project card col-8" aria-labelledby="p1-title">
+            <div class="card-media">
+              <img src="images/projeto-exemplo.jpg" alt="Aula de alfabetização" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h2 id="p1-title">Alfabetização Comunitária <span class="badge positive">Voluntariado</span></h2>
+              <p>Descrição completa, indicadores e resultados. Projeto focado em adultos e jovens.</p>
+              <div class="meta">
+                <span class="tag">Educação</span>
+                <span class="tag">Comunidade</span>
+                <span class="muted">Última atualização: 2025-06-01</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="col-4">
+            <div class="card">
+              <h3>Como ajudar</h3>
+              <ul>
+                <li>Voluntariado</li>
+                <li>Doação financeira</li>
+                <li>Parcerias</li>
+              </ul>
+              <a class="btn btn-primary" href="cadastro.html">Cadastrar-se</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <footer>
+    <div class="container">
+      <p>© ONG Exemplo</p>
+    </div>
+  </footer>
+
+  <script src="js/masks.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
