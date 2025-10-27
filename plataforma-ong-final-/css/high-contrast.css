@@ -1,0 +1,13 @@
+/* High contrast theme */
+:root[data-theme='high-contrast']{
+  --color-neutral-100: #000;
+  --color-neutral-300: #000;
+  --color-neutral-500: #fff;
+  --color-neutral-700: #fff;
+  --color-neutral-900: #fff;
+  --color-primary-500: #ffff00;
+  background: #000;
+  color: #fff;
+}
+.skip-link:focus{outline:3px solid #fff}
+.button{border:3px solid #fff}
